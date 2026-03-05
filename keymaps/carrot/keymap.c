@@ -48,22 +48,12 @@ enum custom_keycodes {
 // clang-format off
 const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
 
-/* Base Layer (QWERTY)
- * ,-----------------------------------------------------------------------------------.
- * | F13  |   Q  |   W  |   E  |   R  |   T  |   Y  |   U  |   I  |   O  |   P  | Del  |
- * |------+------+------+------+------+------+------+------+------+------+------+------|
- * | Tab  |   A  |   S  |   D  |   F  |   G  | Bksp |   H  |   J  |   K  |   L  |Enter |
- * |------+------+------+------+------+------+------+------+------+------+------+------|
- * | Shift|   Z  |   X  |   C  |   V  |   B  |   B  |   N  |   M  |   ,  |   .  |Shift |
- * |------+------+------+------+------+------+------+------+------+------+------+------|
- * |Lower | Ctrl | GUI  | Alt  |Space | Esc  |Raise |Shift | Hypr |   `  |   '  |   NEW  |
- * `-----------------------------------------------------------------------------------'
- */
+//  Base Layer (QWERTY)
 [_BASE] = LAYOUT_ortho_4x12(
-    KC_F13,   KC_Q,    KC_W,    KC_E,    KC_R,    KC_T,    KC_Y,    KC_U,    KC_I,    KC_O,    KC_P,    KC_DEL,
-    KC_TAB,   KC_A,    KC_S,    KC_D,    KC_F,    KC_G,    KC_BSPC, KC_H,    KC_J,    KC_K,    KC_L,    KC_ENT,
-    KC_LSFT,  KC_Z,    KC_X,    KC_C,    KC_V,    KC_B,    KC_B,    KC_N,    KC_M,    KC_COMM, KC_DOT,  KC_RSFT,
-    MO(_LOWER), KC_LCTL, KC_LGUI, KC_LALT, KC_SPC,  KC_ESC,  MO(_RAISE), KC_RSFT, HYPR(KC_NO), KC_GRV, KC_QUOT, TO(_NEW)
+    KC_F13,     KC_Q,    KC_W,    KC_E,    KC_R,   KC_T,   KC_Y,       KC_U,    KC_I,        KC_O,    KC_P,    KC_DEL,
+    KC_TAB,     KC_A,    KC_S,    KC_D,    KC_F,   KC_G,   KC_BSPC,    KC_H,    KC_J,        KC_K,    KC_L,    KC_ENT,
+    KC_LSFT,    KC_Z,    KC_X,    KC_C,    KC_V,   KC_B,   KC_B,       KC_N,    KC_M,        KC_COMM, KC_DOT,  KC_RSFT,
+    MO(_LOWER), KC_LCTL, KC_LGUI, KC_LALT, KC_SPC, KC_ESC, MO(_RAISE), KC_RSFT, HYPR(KC_NO), KC_GRV,  KC_QUOT, TO(_NEW)
 ),
 
 /* Lower Layer (Navigation + RGB)
@@ -120,17 +110,7 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
     XXXXXXX, KC_LALT, XXXXXXX, KC_LCTL, KC_SPC,  XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX, QK_BOOT
 ),
 
-/* New Layer (HD Promethium)
- * ,-----------------------------------------------------------------------------------.
- * |  F13 |   F  |   P  |   D  |   L  |   X  |   ;  |   U  |   O  |   Y  |   B  |  Z   |
- * |------+------+------+------+------+------+------+------+------+------+------+------|
- * | Tab  |    S  |   N  |   T  |   H  |   K  | Bksp  |   A  |   E  |   I  |   C  | Q  |
- * |------+------+------+------+------+------+------+------+------+------+------+------|
- * |  \   |   V  |   W  |   G  |   M  |   J  |   -  |   .  |   '  |   =  |   /  |Enter  |
- * |------+------+------+------+------+------+------+------+------+------+------+------|
- * | Caps |  Down | Up  |  GUI |Space| ESC   |   R  |    , | Hypr | Left | Right| BASE |
- * `-----------------------------------------------------------------------------------'
- */
+// New Layer (HD Promethium)
 [_NEW] = LAYOUT_ortho_4x12(
     KC_F13,       KC_F,    KC_P,  KC_D,        KC_L,     KC_X,   KC_SCLN, KC_U,     KC_O,            KC_Y,    KC_B,     KC_Z,
     KC_TAB,       KC_S,    KC_N,  KC_T,        KC_H,     KC_K,   KC_BSPC, KC_A,     KC_E,            KC_I,    KC_C,     KC_Q,
@@ -138,17 +118,7 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
     KC_CAPS,      KC_DOWN, KC_UP, HYPR(KC_NO), KC_SPACE, KC_ESC, KC_R,    KC_COMMA, MO(_NEWSPECIAL), KC_LEFT, KC_RIGHT, TO(_BASE)
 ),
 
-/* NewTop Layer (Numbers & Brackets)
- * ,-----------------------------------------------------------------------------------.
- * |      |   0  |   1  |   2  |   3  |   4  |   5  |   6  |   7  |   8  |   9  |      |
- * |------+------+------+------+------+------+------+------+------+------+------+------|
- * |      |      |      |   `  |   {  |   (  |   )  |   }  |      |      |      |      |
- * |------+------+------+------+------+------+------+------+------+------+------+------|
- * |      |      |      |      |   <  |   [  |   ]  |   >  |      |      |      |      |
- * |------+------+------+------+------+------+------+------+------+------+------+------|
- * |      |      |      |      |      |      |      |      |      |      |      |      |
- * `-----------------------------------------------------------------------------------'
- */
+// NewTop Layer (Numbers & Brackets)
 [_NEWSPECIAL] = LAYOUT_ortho_4x12(
     _______, KC_0,    KC_1,    KC_2,     KC_3,    KC_4,    KC_5,    KC_6,    KC_7,    KC_8,    KC_9,    _______,
     _______, _______, _______, KC_GRAVE, KC_LCBR, KC_LPRN, KC_RPRN, KC_RCBR, _______, _______, _______, _______,
@@ -157,6 +127,7 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
 ),
 
 
+// NewFunction Layouer (Functions for accessing bios)
 [_NEWFUNCTION] = LAYOUT_ortho_4x12(
     _______, KC_F1,   KC_F2,   KC_F3,   KC_F4,   _______, _______, _______, _______, _______, _______, _______,
     _______, KC_F5,   KC_F6,   KC_F7,   KC_F8,   _______, _______, _______, _______, _______, _______, _______,
