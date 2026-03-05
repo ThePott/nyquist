@@ -13,7 +13,7 @@ const uint16_t PROGMEM combo_rshift[] = {KC_K, KC_L, COMBO_END};
 /* New layer combos (Caster layout) */
 const uint16_t PROGMEM combo_new_lshift[] = {KC_C, KC_S, COMBO_END};
 const uint16_t PROGMEM combo_new_rshift[] = {KC_I, KC_L, COMBO_END};
-const uint16_t PROGMEM combo_new_esc[]    = {KC_B, KC_W, COMBO_END};
+const uint16_t PROGMEM combo_new_esc[] = {KC_B, KC_W, COMBO_END};
 
 combo_t key_combos[] = {
     COMBO(combo_lshift, KC_LSFT), /* A + S = Left Shift (Base) */
@@ -170,5 +170,12 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
 // clang-format on
 
 #ifdef ENCODER_MAP_ENABLE
-const uint16_t PROGMEM encoder_map[][NUM_ENCODERS][NUM_DIRECTIONS] = {[_BASE] = {ENCODER_CCW_CW(KC_VOLD, KC_VOLU), ENCODER_CCW_CW(RM_NEXT, RM_PREV)}, [_LOWER] = {ENCODER_CCW_CW(KC_PGUP, KC_PGDN), ENCODER_CCW_CW(KC_MNXT, KC_MPRV)}, [_RAISE] = {ENCODER_CCW_CW(_______, _______), ENCODER_CCW_CW(_______, _______)}, [_ADJUST] = {ENCODER_CCW_CW(_______, _______), ENCODER_CCW_CW(_______, _______)}, [_NEW] = {ENCODER_CCW_CW(KC_VOLD, KC_VOLU), ENCODER_CCW_CW(RM_NEXT, RM_PREV)}, [_NEWTOP] = {ENCODER_CCW_CW(_______, _______), ENCODER_CCW_CW(_______, _______)}};
+const uint16_t PROGMEM encoder_map[][NUM_ENCODERS][NUM_DIRECTIONS] = {
+    [_BASE] = {ENCODER_CCW_CW(KC_VOLD, KC_VOLU), ENCODER_CCW_CW(RM_NEXT, RM_PREV)},
+    [_LOWER] = {ENCODER_CCW_CW(KC_PGUP, KC_PGDN), ENCODER_CCW_CW(KC_MNXT, KC_MPRV)},
+    [_RAISE] = {ENCODER_CCW_CW(_______, _______), ENCODER_CCW_CW(_______, _______)},
+    [_ADJUST] = {ENCODER_CCW_CW(_______, _______), ENCODER_CCW_CW(_______, _______)},
+    [_NEW] = {ENCODER_CCW_CW(KC_VOLD, KC_VOLU), ENCODER_CCW_CW(RM_NEXT, RM_PREV)},
+    [_NEWTOP] = {ENCODER_CCW_CW(_______, _______), ENCODER_CCW_CW(_______, _______)}};
+
 #endif
