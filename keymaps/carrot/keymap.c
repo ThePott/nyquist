@@ -1,8 +1,3 @@
-// Copyright 2024 haheungju
-// SPDX-License-Identifier: GPL-2.0-or-later
-
-#include "keycodes.h"
-#include "keymap_us.h"
 #include QMK_KEYBOARD_H
 #include "combos.h"
 #include "definitions.h"
@@ -100,15 +95,4 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
 
 };
 
-// clang-format on
-
-#ifdef ENCODER_MAP_ENABLE
-const uint16_t PROGMEM encoder_map[][NUM_ENCODERS][NUM_DIRECTIONS] = {
-    [_BASE] = {ENCODER_CCW_CW(KC_VOLD, KC_VOLU), ENCODER_CCW_CW(RM_NEXT, RM_PREV)},
-    [_LOWER] = {ENCODER_CCW_CW(KC_PGUP, KC_PGDN), ENCODER_CCW_CW(KC_MNXT, KC_MPRV)},
-    [_RAISE] = {ENCODER_CCW_CW(_______, _______), ENCODER_CCW_CW(_______, _______)},
-    [_ADJUST] = {ENCODER_CCW_CW(_______, _______), ENCODER_CCW_CW(_______, _______)},
-    [_NEW] = {ENCODER_CCW_CW(KC_VOLD, KC_VOLU), ENCODER_CCW_CW(RM_NEXT, RM_PREV)},
-    [_NEWTOP] = {ENCODER_CCW_CW(_______, _______), ENCODER_CCW_CW(_______, _______)}};
-
-#endif
+// NOTE: I have deleted encoder ccw cw part, because I do not use any nobes on keyboard
