@@ -70,10 +70,10 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
 
 // New Layer (HD Promethium)
 [_NEW] = LAYOUT_ortho_4x12(
-    KC_Q,         KC_F,    KC_P,  KC_D,          KC_L,     KC_X,   KC_SEMICOLON, KC_U,     KC_O,            KC_Y,    KC_B,     KC_Z,
-    KC_TAB,       KC_S,    KC_N,  KC_T,          KC_H,     KC_K,   KC_BACKSPACE, KC_A,     KC_E,            KC_I,    KC_C,     KC_ENTER,
-    KC_BACKSLASH, KC_V,    KC_W,  KC_G,          KC_M,     KC_J,   KC_MINUS,     KC_DOT,   KC_QUOTE,        KC_EQL,  KC_SLASH, KC_F13,
-    KC_F13,       KC_DOWN, KC_UP, KC_LEFT_SHIFT, KC_SPACE, KC_ESC, KC_R,         KC_COMMA, MO(_NEWSPECIAL), KC_LEFT, KC_RIGHT, TO(_BASE)
+    KC_Q,         KC_F,    KC_P,  KC_D,          KC_L,     KC_X,   KC_SEMICOLON, KC_U,     KC_O,            KC_Y,     KC_B,     KC_Z,
+    KC_TAB,       KC_S,    KC_N,  KC_T,          KC_H,     KC_K,   KC_BACKSPACE, KC_A,     KC_E,            KC_I,     KC_C,     KC_ENTER,
+    KC_BACKSLASH, KC_V,    KC_W,  KC_G,          KC_M,     KC_J,   KC_MINUS,     KC_DOT,   KC_QUOTE,        KC_EQUAL, KC_SLASH, KC_F13,
+    KC_F13,       KC_DOWN, KC_UP, KC_LEFT_SHIFT, KC_SPACE, KC_ESC, KC_R,         KC_COMMA, MO(_NEWSPECIAL), KC_LEFT,  KC_RIGHT, TO(_BASE)
 ),
 
 // NewTop Layer (Numbers & Brackets)

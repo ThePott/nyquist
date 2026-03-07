@@ -12,7 +12,7 @@ const uint16_t PROGMEM combo_new_lcontrol[] = {KC_S, KC_H, COMBO_END};
 const uint16_t PROGMEM combo_new_lhypr[] = {KC_V, KC_N, COMBO_END};
 const uint16_t PROGMEM combo_new_lmeh[] = {KC_V, KC_W, COMBO_END};
 
-const uint16_t PROGMEM combo_new_rsuper[] = {KC_C, KC_Q, COMBO_END};
+const uint16_t PROGMEM combo_new_rsuper[] = {KC_C, KC_ENTER, COMBO_END};
 const uint16_t PROGMEM combo_new_rshift[] = {KC_C, KC_I, COMBO_END};
 const uint16_t PROGMEM combo_new_ralt[] = {KC_C, KC_E, COMBO_END};
 const uint16_t PROGMEM combo_new_rcontrol[] = {KC_C, KC_A, COMBO_END};
