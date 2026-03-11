@@ -7,14 +7,14 @@
 // NOTE: HD Pothenium combos
 const uint16_t PROGMEM combo_new_lsuper[] = {KC_S, KC_TAB, COMBO_END};
 const uint16_t PROGMEM combo_new_lshift[] = {KC_S, KC_N, COMBO_END};
-const uint16_t PROGMEM combo_new_lalt[] = {KC_S, KC_T, COMBO_END};
+const uint16_t PROGMEM combo_new_lalt[] = {KC_S, KC_M, COMBO_END};
 const uint16_t PROGMEM combo_new_lcontrol[] = {KC_S, KC_H, COMBO_END};
 const uint16_t PROGMEM combo_new_lhypr[] = {KC_V, KC_N, COMBO_END};
 const uint16_t PROGMEM combo_new_lmeh[] = {KC_V, KC_W, COMBO_END};
 
 const uint16_t PROGMEM combo_new_rsuper[] = {KC_C, KC_ENTER, COMBO_END};
 const uint16_t PROGMEM combo_new_rshift[] = {KC_C, KC_I, COMBO_END};
-const uint16_t PROGMEM combo_new_ralt[] = {KC_C, KC_E, COMBO_END};
+const uint16_t PROGMEM combo_new_ralt[] = {KC_C, KC_DOT, COMBO_END};
 const uint16_t PROGMEM combo_new_rcontrol[] = {KC_C, KC_A, COMBO_END};
 const uint16_t PROGMEM combo_new_rhypr[] = {KC_SLASH, KC_I, COMBO_END};
 const uint16_t PROGMEM combo_new_rmeh[] = {KC_SLASH, KC_EQUAL, COMBO_END};
