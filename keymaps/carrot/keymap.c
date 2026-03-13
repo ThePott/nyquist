@@ -1,4 +1,5 @@
 #include "keycodes.h"
+#include "keymap_us.h"
 #include "modifiers.h"
 #include "quantum_keycodes.h"
 #include QMK_KEYBOARD_H
@@ -10,12 +11,18 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
 
 //  Base Layer (QWERTY)
 [_BASE] = LAYOUT_ortho_4x12(
-    KC_F13,     KC_Q,    KC_W,    KC_E,    KC_R,   KC_T,   KC_Y,       KC_U,    KC_I,        KC_O,    KC_P,    KC_DEL,
-    KC_TAB,     KC_A,    KC_S,    KC_D,    KC_F,   KC_G,   KC_BSPC,    KC_H,    KC_J,        KC_K,    KC_L,    KC_ENT,
-    KC_LSFT,    KC_Z,    KC_X,    KC_C,    KC_V,   KC_B,   KC_B,       KC_N,    KC_M,        KC_COMM, KC_DOT,  KC_RSFT,
-    KC_F13, KC_LCTL, KC_LGUI, KC_LALT, KC_SPC, KC_ESC, MO(_RAISE), KC_RSFT, HYPR(KC_NO), KC_GRV,  KC_QUOT, TO(_NEW)
+    KC_F13,       KC_Q,    KC_W,     KC_E,    KC_R,   KC_T,   KC_Y,       KC_U,    KC_I,    KC_O,    KC_P,   KC_DEL,
+    KC_TAB,       KC_A,    KC_S,     KC_D,    KC_F,   KC_G,   KC_BSPC,    KC_H,    KC_J,    KC_K,    KC_L,   KC_ENT,
+    KC_LSFT,      KC_Z,    KC_X,     KC_C,    KC_V,   KC_B,   KC_B,       KC_N,    KC_M,    KC_COMM, KC_DOT, KC_RSFT,
+    KC_CAPS_LOCK, KC_LEFT, KC_RIGHT, KC_LALT, KC_SPC, KC_ESC, MO(_RAISE), KC_RSFT, KC_RCTL, KC_DOWN, KC_UP,  KC_RGUI
 ),
 
+[_RAISE] = LAYOUT_ortho_4x12(
+    KC_GRV,  KC_0,    KC_1,     KC_2,         KC_3,         KC_4,          KC_5,            KC_6,     KC_7,     KC_8,    KC_9,    _______,
+    KC_TILD, KC_LBRC, KC_LABK,  KC_LPRN,      KC_LCBR,      KC_UNDERSCORE, _______,         KC_RCBR,  KC_RPRN,  KC_RABK, KC_RBRC, _______,
+    _______, KC_EQL,  KC_MINUS, KC_BACKSLASH, KC_SEMICOLON, KC_QUOTE,      KC_DOUBLE_QUOTE, KC_COLON, KC_SLASH, _______, _______, _______,
+    _______, _______, _______,  _______,      _______,      _______,       _______,         _______,  _______,  _______, _______, _______
+),
 /* Lower Layer (Navigation + RGB)
  * ,-----------------------------------------------------------------------------------.
  * |RGBTog|RGBMod|      |      |      |      |      |      |      |      |      |      |
@@ -27,6 +34,7 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
  * |      |      |      |      |      |      |      |      |      | Next | Vol- | Vol+ |
  * `-----------------------------------------------------------------------------------'
  */
+
 [_LOWER] = LAYOUT_ortho_4x12(
     RM_TOGG, RM_NEXT, _______, _______, _______, _______, _______, _______, _______, _______, _______, _______,
     RM_HUEU, RM_SATU, RM_VALU, _______, _______, _______, _______, KC_LEFT, KC_DOWN, KC_UP,   KC_RGHT, _______,
@@ -34,23 +42,6 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
     _______, _______, _______, _______, _______, _______, _______, _______, _______, KC_MNXT, KC_VOLD, KC_VOLU
 ),
 
-/* Raise Layer (Numbers & Symbols)
- * ,-----------------------------------------------------------------------------------.
- * |   `  |   1  |   2  |   3  |   4  |   5  |   6  |   7  |   8  |   9  |   0  |   \  |
- * |------+------+------+------+------+------+------+------+------+------+------+------|
- * |   ~  |   /  |   :  |   '  |   "  |   -  |   =  |   [  |   ]  |   (  |   )  |   |  |
- * |------+------+------+------+------+------+------+------+------+------+------+------|
- * |      |   ?  |   ;  |   <  |   >  |   _  |   +  |   {  |   }  |      |      |      |
- * |------+------+------+------+------+------+------+------+------+------+------+------|
- * |      |      |      |      |      |      |      |      |      | Next | Vol- | Vol+ |
- * `-----------------------------------------------------------------------------------'
- */
-[_RAISE] = LAYOUT_ortho_4x12(
-    KC_GRV,  KC_1,    KC_2,    KC_3,    KC_4,    KC_5,    KC_6,    KC_7,    KC_8,    KC_9,    KC_0,    KC_BSLS,
-    KC_TILD, KC_SLSH, KC_COLN, KC_QUOT, KC_DQUO, KC_MINS, KC_EQL,  KC_LBRC, KC_RBRC, KC_LPRN, KC_RPRN, KC_PIPE,
-    _______, KC_QUES, KC_SCLN, KC_LABK, KC_RABK, KC_UNDS, KC_PLUS, KC_LCBR, KC_RCBR, _______, _______, _______,
-    _______, _______, _______, _______, _______, _______, _______, _______, _______, KC_MNXT, KC_VOLD, KC_VOLU
-),
 
 /* Adjust Layer (Lower + Raise)
  * ,-----------------------------------------------------------------------------------.
@@ -72,18 +63,18 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
 
 // New Layer (HD Promethium)
 [_NEW] = LAYOUT_ortho_4x12(
-    KC_Q,         KC_F,    KC_P,  KC_D,          KC_L,     KC_X,           KC_SEMICOLON, KC_U,   KC_O,            KC_Y,        KC_B,     KC_Z,
-    KC_TAB,       MT(MOD_LGUI, KC_S),    MT(MOD_LALT, KC_N),  MT(MOD_LSFT,   KC_T),    MT(MOD_LCTL,    KC_H),        KC_K,   KC_BACKSPACE,    MT(MOD_RCTL, KC_A),    MT(MOD_RSFT, KC_E),    MT(MOD_RALT, KC_I), MT(MOD_RGUI, KC_C), KC_ENTER,
-    KC_BACKSLASH, KC_V,    KC_W,  KC_G,          KC_M,     KC_J,           KC_MINUS,     KC_DOT, KC_DOUBLE_QUOTE, KC_EQUAL,    KC_SLASH, KC_GRAVE,
-    KC_F13,       KC_DOWN, KC_UP, KC_LEFT_SHIFT, KC_SPACE, LT(_NEWSPECIAL, KC_ESC),      KC_R,   MT(MOD_LSFT,     KC_COMMA),   KC_QUOTE, KC_LEFT,     KC_RIGHT, TO(_BASE)
+    KC_Q,    KC_F,    KC_P,       KC_D,    KC_L,     KC_X,   KC_SEMICOLON,    KC_U,     KC_O,            KC_Y,             KC_B,     KC_Z,
+    KC_TAB,  KC_S,    KC_N,       KC_T,    KC_H,     KC_K,   KC_BACKSPACE,    KC_A,     KC_E,            KC_I,             KC_C,     KC_ENTER,
+    KC_LSFT, KC_V,    KC_W,       KC_G,    KC_M,     KC_J,   KC_COMMA,        KC_EQUAL, KC_DOUBLE_QUOTE, KC_MINUS,         KC_SLASH, KC_RSFT,
+    KC_F13,  KC_LGUI, MO(_LOWER), KC_LALT, KC_SPACE, KC_ESC, MO(_NEWSPECIAL), KC_R,     KC_LCTL,         MO(_NEWFUNCTION), KC_RGUI,  TO(_BASE)
 ),
 
 // NewTop Layer (Numbers & Brackets)
 [_NEWSPECIAL] = LAYOUT_ortho_4x12(
-    _______, KC_0,    KC_1,    KC_2,    KC_3,    KC_4,            KC_5,    KC_6,    KC_7,    KC_8,    KC_9,    _______,
-    _______, KC_LABK, KC_LBRC, KC_LPRN, KC_LCBR, KC_DOUBLE_QUOTE, _______, KC_RCBR, KC_RPRN, KC_RBRC, KC_RABK, _______,
-    _______, _______, _______, _______, _______, _______,         _______, _______, _______, _______, _______, _______,
-    _______, _______, _______, _______, _______, _______,         _______, _______, _______, _______, _______, _______
+    _______, KC_0,    KC_1,    KC_2,    KC_3,     KC_4,    KC_5,    KC_6,     KC_7,     KC_8,    KC_9,    _______,
+    _______, KC_LBRC, KC_LABK, KC_LPRN, KC_LCBR,  _______, _______, KC_RCBR,  KC_RPRN,  KC_RABK, KC_RBRC, _______,
+    _______, KC_LEFT, KC_DOWN, KC_UP,   KC_RIGHT, _______, KC_DOT,  KC_COLON, KC_QUOTE, KC_GRAVE, KC_BACKSLASH, _______,
+    _______, _______, _______, _______, _______,  _______, _______, _______,  _______,  _______, _______, _______
 ),
 
 
