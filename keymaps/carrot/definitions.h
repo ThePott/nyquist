@@ -4,11 +4,11 @@
 enum layer_names {
     _BASE,
     _LOWER,
+    _FUNCTION,
     _RAISE,
     _ADJUST,
     _NEW, /* handsdown promethium */
     _NEWSPECIAL,
-    _NEWFUNCTION
 };
 
 /* Macros from VIA config */
